@@ -54,8 +54,8 @@ var couchimport = function(filename, c) {
 
   var dane = csv2json(data);
 var output = JSON.parse(dane);
-
-      db.save(c+'', output.meteo, function(er, ok) {
+	console.log(c+"");
+      db.save(c+"", output.meteo, function(er, ok) {
         if (er) {
           util.puts("Error: " + er);
           return;
@@ -80,7 +80,7 @@ var i =0;
    filenames.forEach(function (name) {
 i++;
   var n = couchimport(name, i);
-  console.log("imported data from:", name, "(#" + n + ")");
+  //console.log("imported data from:", name, "(#" + n + ")");
 
 });
 });

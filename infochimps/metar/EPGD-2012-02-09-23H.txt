@@ -1,0 +1,12 @@
+Gdansk-Rebiechowo, Poland (EPGD) 54-23N 018-28E 138M
+Feb 09, 2012 - 05:00 PM EST / 2012.02.09 2200 UTC
+Wind: from the ESE (120 degrees) at 6 MPH (5 KT):0
+Visibility: greater than 7 mile(s):0
+Sky conditions: mostly cloudy
+Temperature: 12 F (-11 C)
+Windchill: 3 F (-16 C):1
+Dew Point: 6 F (-14 C)
+Relative Humidity: 78%
+Pressure (altimeter): 30.71 in. Hg (1040 hPa)
+ob: EPGD 092200Z 12005KT 9999 FEW009 BKN017 M11/M14 Q1040 R11/090095
+cycle: 22

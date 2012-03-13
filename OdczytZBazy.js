@@ -8,7 +8,8 @@ var options = {
    path: '/meteo/_all_docs',
    method: 'GET'
 };
-
+var indeksy=[];
+var i=0;
 var req = http.request(options, function(res) {
   //console.log('STATUS: ' + res.statusCode);
   //console.log('HEADERS: ' + JSON.stringify(res.headers));
@@ -18,7 +19,11 @@ var req = http.request(options, function(res) {
 		chunk = chunk.replace("\n",'');
 		chunk = chunk.replace("{\"id\":\"",'').replace("{[",'').replace("]}",'');
 		var tmp = chunk.split('"');
-    console.log(tmp[0]);
+   // console.log(tmp[0]);
+	indeksy[i]=tmp[0];
+	console.log(i+"||"+indeksy[i]);
+	i++;
+	console.log(indeksy.lenght);
   });
 });
 

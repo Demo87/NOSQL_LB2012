@@ -19,11 +19,11 @@ var req = http.request(options, function(res) {
 		chunk = chunk.replace("\n",'');
 		chunk = chunk.replace("{\"id\":\"",'').replace("{[",'').replace("]}",'');
 		var tmp = chunk.split('"');
-   // console.log(tmp[0]);
+  	 // console.log(tmp[0]);
 	indeksy[i]=tmp[0];
-	console.log(i+"||"+indeksy[i]);
+	console.log(i+"{}"+indeksy[i]);
 	i++;
-	console.log(indeksy.lenght);
+	//console.log(indeksy.lenght);
   });
 });
 

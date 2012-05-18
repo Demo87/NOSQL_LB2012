@@ -1,0 +1,9 @@
+{
+   "language": "javascript",
+   "views": {
+       "koszt2": {
+           "map": "function(doc){koszt =parseInt(doc.Cost); emit(doc.Country, koszt)};",
+           "reduce": "function(key, values){var suma = 0; var tmp = 0;for(i = 0; i < values.length; i++){tmp = parseInt(values[i]); if(tmp>null){suma+=tmp;}} return suma;}"
+       }
+   }
+}

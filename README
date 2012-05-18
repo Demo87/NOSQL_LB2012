@@ -11,3 +11,24 @@ The 404 was an error, your key should have still been added.  We've fixed the bu
 
 ==================================================
 Reply with #ignore to stop receiving notifications for this discussion.
+Opis plików
+nosql.jar
+plik wykonywalny z parametrami
+parametry = [nazwa] nazwabazy(kolekcji)
+
+przykład: java -jar nosql.jar --odczytcouch db=katastrofy
+
+--zapisdomongo - zapis do mongodb z pliku tekstowego o nazwie [nazwabazy].txt z danymi w formacie json do bazy o tej samej nazwie
+--MR - mapreduce dla MongoDB
+--odczytcouch - odczyt z bazy o nazwie [nazwa] do pliku [nazwa].txt
+
+mongo-2.7.3.jar - biblioteka do obsługi mongodb
+
+ImportToCouchDB.js -import bazy ufo do couchdb
+
+import.js -import bazy tatry do couchdb
+
+ImportToCouchDBTSV.js - import bazy katastrofy z formatu tsv 
+
+ImportToCouchDBMeteo.js import bazy metar 
+

@@ -3,16 +3,16 @@ import java.io.*;
 
 public class KouchDB {
 
-	public static void main(String[] args) throws IOException {
+	/*public static void main(String[] args) throws IOException {
 		
 		czytaj("katastrofy");
 		czytaj("tatry");
 		czytaj("meteo");
 		czytaj("pojufo");
 
-	}
+	}*/
 	
-	public static void czytaj(String nazwa) throws IOException{
+	public void czytaj(String nazwa) throws IOException{
 		FileWriter plik = new FileWriter(nazwa+".txt");
 		//BufferedWriter bufor = new BufferedWriter(plik);
 		

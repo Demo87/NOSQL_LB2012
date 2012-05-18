@@ -12,12 +12,12 @@ public class Elastic {
 	 * @throws IOException
 	 * @throws MalformedURLException
 	 */
-	public static void main(String[] args) throws MalformedURLException,
+	/*public static void main(String[] args) throws MalformedURLException,
 			IOException {
 		// TODO Auto-generated method stub
 		System.out.println("JUPI");
 		wpisz();
-	}
+	}*/
 
 	public static void wpisz() throws MalformedURLException, IOException {
 		HttpURLConnection con = (HttpURLConnection) new URL(

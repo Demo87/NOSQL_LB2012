@@ -21,16 +21,16 @@ import com.mongodb.util.JSON;
 
 public class MojeMongo {
 
-	public static void main(String[] args) throws MongoException, IOException {
-		/*wstaw("tatry");
+	/*public static void main(String[] args) throws MongoException, IOException {
+		wstaw("tatry");
 		wstaw("meteo");
 		wstaw("pojufo");
-		wstaw("katastrofy");*/
+		wstaw("katastrofy");
 		wstawMR("katastrofy");
 
-	}
+	}*/
 
-	public static void wstaw(String nazwa) throws MongoException, IOException {
+	public void wstaw(String nazwa) throws MongoException, IOException {
 		Mongo mon = new Mongo();
 		
 		mon.dropDatabase(nazwa);
@@ -86,24 +86,36 @@ public class MojeMongo {
 		}
 	}
 	
-	public static void wstawMR(String nazw) throws MongoException, IOException, StringIndexOutOfBoundsException {
+	public void wstawMR(String nazw) throws MongoException, IOException, StringIndexOutOfBoundsException {
 		Mongo connection = new Mongo();
 	    DB db = connection.getDB(nazw);
 	    DBCollection myColl = db.getCollection(nazw);
 	    DBCollection myNewColl = db.getCollection("NEW_2");
 	    myNewColl.drop();
 	  //  BasicDBObject query1 = new BasicDBObject("Country", "Mexico");
-	    BasicDBObject query1 = new BasicDBObject("Country", "Mexico");
+	    
 	   /* DBCursor cursor = myColl.find(query1);
 	    System.out.println(cursor.count() + query1.toString());
 	    DBObject current = new BasicDBObject();
 	    while(cursor.hasNext()) {
 	        current = cursor.next();
 	        myNewColl.save(current);
+	        
+	        r = function(key, values) {
+  var value = 0;
+  values.forEach(function(count) {
+    value += count;
+  });
+  return value;
+};
+	{"Cost": {"$gt":"1500"}}        
+	        
+	        
 	    }*/
-	    String m = "function(){emit(this._id, {Country:this.Country})}";
-	    String r = "function(key, values){return values}";
+	    String m = "function(){koszt =parseInt(this.Cost),  emit(this._id, {Kraj:this.Country, Koszt:koszt})}";
+	    String r = "function(key, values){var value=0; values.forEach(function(count){ value+=count; }); return value}";
 	    String ouString = "NEW_2";
+	    BasicDBObject query1 = new BasicDBObject("Cost", new BasicDBObject("$lt", "1500"));
 	    myColl.mapReduce(m, r, ouString, query1);
 	}
 }
